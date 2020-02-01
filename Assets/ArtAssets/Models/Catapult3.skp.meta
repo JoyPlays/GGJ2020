@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6cab0275dfa22334d990d8c1576bb3d1
+guid: 090d294d6e41a8240b3eff9590f003b0
 SketchUpImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -41,7 +41,7 @@ SketchUpImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
+    importCameras: 1
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -80,7 +80,7 @@ SketchUpImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0254
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -95,9 +95,9 @@ SketchUpImporter:
   assetBundleName: 
   assetBundleVariant: 
   generateBackFace: 1
-  mergeCoplanarFaces: 1
+  mergeCoplanarFaces: 0
   selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000
   assetHash:
     serializedVersion: 2
-    Hash: d4b9301da3dc58f7ed2628fa89d92f8f
+    Hash: 4f067e830054b9e366646588e5fe8427
   fileUnit: 0
