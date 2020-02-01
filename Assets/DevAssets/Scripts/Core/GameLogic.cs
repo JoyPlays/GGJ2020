@@ -35,14 +35,14 @@ public class GameLogic : MonoBehaviour
 
     private IEnumerator SpawnSequence()
     {
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < 700; i++)
         {
             for (int j = 0; j < 10; j++)
             {
                 Entity zombie = manager.Instantiate(zombieEntityPrefab);
                 Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
                 Quaternion rot = Quaternion.LookRotation(dir);
-                Vector3 rng = Random.insideUnitSphere * 25f;
+                Vector3 rng = Random.insideUnitSphere * 80f;
                 rng.y = 1f;
                 manager.SetComponentData(zombie, new Translation{Value = zombieSpawnPoint.position + rng});
                 manager.SetComponentData(zombie, new Rotation{Value = rot});
