@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] UnitCanvasController uCC = null;
     [SerializeField] Transform cameraChild = null;
 
     [SerializeField] float zoomingSpeed = 1f;
@@ -15,18 +16,35 @@ public class CameraController : MonoBehaviour
     private float pitch = 0f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         yaw = transform.eulerAngles.y;
         pitch = transform.eulerAngles.x;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hitInfo;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                UnitUpgrade currentUnit = hitInfo.transform.gameObject.GetComponent<UnitUpgrade>();
+
+                if(currentUnit)
+                {
+                    uCC.GetCurrentUnit(currentUnit);
+                    uCC.EnableUI(hitInfo.transform.position);
+                }
+            }
+        }
+
         cameraChild.transform.rotation = Quaternion.Euler(new Vector3(-transform.rotation.eulerAngles.x, 0f, 0f));
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             yaw += mouseSensitivityH * Input.GetAxis("Mouse X");
             pitch -= mouseSensitivityV * Input.GetAxis("Mouse Y");

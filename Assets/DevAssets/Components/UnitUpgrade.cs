@@ -11,11 +11,14 @@ public class UnitUpgrade : MonoBehaviour
     public GameAction successfulAction;
     public GameAction failedAction;
 
+    [SerializeField] UnitCanvasController uCC = null;
+
     public void Upgrade()
     {
         if (payerFunds == null || unit == null)
         {
             Debug.LogError("Cannot upgrade " + this.name + " missing UnitUpgrade configuration.");
+            uCC.DisplayNotEnoughMoney();
             return;
         }
 
@@ -32,6 +35,8 @@ public class UnitUpgrade : MonoBehaviour
             GameObjectReplace.Replace(gameObject, unit.upgrade);
 
             successfulAction.Raise();
+
+            uCC.DisableUI();
 
             return;
         }
