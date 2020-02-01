@@ -21,5 +21,14 @@ namespace Ugitty.Components
 
             hasReplaced = true;
         }
+
+        public static void Replace(GameObject initialObject, GameObject replaceObject)
+        {
+            // Remove old object
+            Destroy(initialObject);
+
+            // Add new object
+            Instantiate(replaceObject, initialObject.transform.position, initialObject.transform.rotation);
+        }
     }
 }
