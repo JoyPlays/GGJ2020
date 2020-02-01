@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour
     
     void SpawnZombies()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 1000; i++)
         {
             Entity zombie = manager.Instantiate(zombieEntityPrefab);
             Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
