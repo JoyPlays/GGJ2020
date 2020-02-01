@@ -45,3 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 3433562465815415344, guid: 8bf971576007a534bba99230c71f84a6,
     type: 3}
+  towerPrefab: {fileID: 4898636641999480690, guid: 98ef614d49f63574193bb1886fd431b8,
+    type: 3}
+  zombieSpawnPoint: {fileID: 0}
+  zombieEndPoint: {fileID: 0}

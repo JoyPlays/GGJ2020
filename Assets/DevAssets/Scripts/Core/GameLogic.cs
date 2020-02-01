@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
@@ -9,9 +10,11 @@ using Random = UnityEngine.Random;
 public class GameLogic : MonoBehaviour
 {
     public GameObject zombiePrefab;
+    public GameObject towerPrefab;
 
     public Transform zombieSpawnPoint;
     public Transform zombieEndPoint;
+    public Transform pointToFall;
     
     private Entity zombieEntityPrefab;
     private EntityManager manager;
@@ -27,7 +30,15 @@ public class GameLogic : MonoBehaviour
         
         SpawnZombies();
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnTower(Vector3.zero);
+        }
+    }
+
     void SpawnZombies()
     {
         StartCoroutine(SpawnSequence());
@@ -35,7 +46,7 @@ public class GameLogic : MonoBehaviour
 
     private IEnumerator SpawnSequence()
     {
-        for (int i = 0; i < 700; i++)
+        for (int i = 0; i < 500; i++)
         {
             for (int j = 0; j < 10; j++)
             {
@@ -56,5 +67,11 @@ public class GameLogic : MonoBehaviour
             }
             yield return null;
         }
+        
+    }
+
+    private void SpawnTower(Vector3 positionToSpawn)
+    {
+        Instantiate(towerPrefab, positionToSpawn, Quaternion.identity);
     }
 }
