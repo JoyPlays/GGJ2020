@@ -1,8 +1,10 @@
-﻿using Unity.Entities;
+﻿using System.Collections;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameLogic : MonoBehaviour
 {
@@ -28,26 +30,31 @@ public class GameLogic : MonoBehaviour
     
     void SpawnZombies()
     {
-        for (int i = 0; i < 1000; i++)
+        StartCoroutine(SpawnSequence());
+    }
+
+    private IEnumerator SpawnSequence()
+    {
+        for (int i = 0; i < 500; i++)
         {
-            Entity zombie = manager.Instantiate(zombieEntityPrefab);
-            Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
-            Quaternion rot = Quaternion.LookRotation(dir);
-            manager.SetComponentData(zombie, new Translation{Value = zombieSpawnPoint.position});
-            manager.SetComponentData(zombie, new Rotation{Value = rot});
-            manager.AddComponentData(zombie, new ZombieTagComponent());
+            for (int j = 0; j < 10; j++)
+            {
+                Entity zombie = manager.Instantiate(zombieEntityPrefab);
+                Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
+                Quaternion rot = Quaternion.LookRotation(dir);
+                Vector3 rng = Random.insideUnitSphere * 25f;
+                rng.y = 1f;
+                manager.SetComponentData(zombie, new Translation{Value = zombieSpawnPoint.position + rng});
+                manager.SetComponentData(zombie, new Rotation{Value = rot});
+                manager.AddComponentData(zombie, new ZombieTagComponent());
 
-            // Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
-            // Vector3 speed = dir * 1f;
-
-
-            // PhysicsVelocity velocity = new PhysicsVelocity()
-            // {
-            //     Linear = speed,
-            //     Angular = float3.zero
-            // };
-            //
-            // manager.AddComponentData(zombie, velocity);
+                MoveForwardComponent moveForwardComponent = new MoveForwardComponent
+                {
+                    speed = Random.Range(0.05f, 0.15f)
+                };
+                manager.AddComponentData(zombie, moveForwardComponent);
+            }
+            yield return null;
         }
     }
 }
