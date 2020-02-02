@@ -35,7 +35,8 @@ public class GameLogic : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnTower(Vector3.zero);
+            //SpawnTower(Vector3.zero);
+            SpawnZombies();
         }
     }
 
@@ -53,7 +54,7 @@ public class GameLogic : MonoBehaviour
                 Entity zombie = manager.Instantiate(zombieEntityPrefab);
                 Vector3 dir = (zombieEndPoint.position - zombieSpawnPoint.position).normalized;
                 Quaternion rot = Quaternion.LookRotation(dir);
-                Vector3 rng = Random.insideUnitSphere * 80f;
+                Vector3 rng = Random.insideUnitSphere * 10f;
                 rng.y = 1f;
                 manager.SetComponentData(zombie, new Translation{Value = zombieSpawnPoint.position + rng});
                 manager.SetComponentData(zombie, new Rotation{Value = rot});
