@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: AQUAS_Lite_Water_Backface
   m_Shader: {fileID: 4800000, guid: 6c5f1c7411ec6004fb354db7ff23d494, type: 3}
   m_ShaderKeywords: _ENABLEPROBERELFECTIONS_ON _ENABLEREALTIMEREFLECTIONS_ON _ENABLEREFLECTIONS_ON
@@ -97,14 +98,14 @@ Material:
     - _MediumTilingDistance: 100
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrength: 1
-    - _NormalTiling: 0.25
+    - _NormalStrength: 0.914
+    - _NormalTiling: 0.176
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ProbeReflectionIntensity: 0.578
     - _RealtimeReflectionIntensity: 1
     - _ReflectionIntensity: 0.385
-    - _Refraction: 0.4
+    - _Refraction: 0.414
     - _RefractionDistance: 10
     - _RefractionFalloff: 1
     - _ShoreFade: 0.56
