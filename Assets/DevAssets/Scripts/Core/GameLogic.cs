@@ -29,6 +29,7 @@ public class GameLogic : MonoBehaviour
         zombieEntityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(zombiePrefab, settings);
         
         SpawnZombies();
+        OpenTheGates();
     }
 
     private void Update()
@@ -36,7 +37,7 @@ public class GameLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SpawnTower(Vector3.zero);
-            SpawnZombies();
+            //SpawnZombies();
         }
     }
 
@@ -74,5 +75,18 @@ public class GameLogic : MonoBehaviour
     private void SpawnTower(Vector3 positionToSpawn)
     {
         Instantiate(towerPrefab, positionToSpawn, Quaternion.identity);
+    }
+
+    private void OpenTheGates()
+    {
+        StartCoroutine(OpenCoroutine());
+    }
+
+    private IEnumerator OpenCoroutine()
+    {
+        yield return new WaitForSeconds(30f);
+        Vector3 newPos = pointToFall.position;
+        newPos.y = 50;
+        pointToFall.position = newPos;
     }
 }
