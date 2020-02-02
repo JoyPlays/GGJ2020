@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: COD3
+  m_Name: Color L05
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: a7a4b81c611d133439be91a55b127757, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45e6f73dd33e47748ba610d8e497bafd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,19 +40,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 89a09d8bdb0e1fd4495572d3fab82b21, type: 3}
+        m_Texture: {fileID: 2800000, guid: ad2340fdff0cb7b4bb1f9fa0380be752, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 7921783390f7fbd48ac60f8ccf02ac14, type: 3}
+        m_Texture: {fileID: 2800000, guid: bd67c988fbe1eeb43b4fde4d07743c78, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: a5df84e7ad6d5c048b2812402b5318a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34b22f08ab070b44caf34bf6e5b43e51, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 5ea5c0086a051aa49b831872d1be93f3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76bb7b0c090137147904b7104d326ab7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -61,7 +61,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.9811321, g: 0.95112395, b: 0.7960128, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
