@@ -11,6 +11,6 @@ public class Projectile : MonoBehaviour
 		Debug.Log(collision.collider.name);
 		GameObject explosionEffect = Instantiate(explosionParticle, transform.position, Quaternion.identity);
 		Destroy(explosionEffect, 3f);
-		Destroy(gameObject);
+		Destroy(gameObject, 1f);
 	}
 }
